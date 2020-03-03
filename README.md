@@ -543,8 +543,272 @@ For example try to access the /user-profile/_id Angular URL without providing th
 Get into the **components/user-profile.component.ts** file and include the following code inside of it.
 
 # Requirements
-## Create Login UI Template with Angular 8/9 and Material Design
+## [FE-001] - Create Login UI Template with Angular 8/9 and Material Design
 
 https://www.positronx.io/create-login-ui-template-with-angular-8-material-design/
 
+```console
+git checkout -b FE-001
+```
+
+In this Angular 8/9 tutorial, we’ll learn to build beautiful login and registration UI (user interface) template with Angular Material 8. We’ll take help of Material design components and Angular 8 flex layout CDK to create the login and registration template. We’ll create a simple Angular 8/9 application from scratch and implement a login and registration UI module in it. You can check out below, how we’ll convert a simple login and registration HTML form into a beautiful UI template.
+
+
+Home  »  Angular Material   »   Create Login UI Template with Angular 8/9 and Material Design
+Create Login UI Template with Angular 8/9 and Material Design
+Last updated on December 14, 2019 by Digamber
+
+In this Angular 8/9 tutorial, we’ll learn to build beautiful login and registration UI (user interface) template with Angular Material 8. We’ll take help of Material design components and Angular 8 flex layout CDK to create the login and registration template. We’ll create a simple Angular 8/9 application from scratch and implement a login and registration UI module in it. You can check out below, how we’ll convert a simple login and registration HTML form into a beautiful UI template.
+
+
+
+Primis Player Placeholder
+
+
+Material Design Login and Register UI Template Demo
+Click below to check out the live demo:
+
+place link here:
+
+
+Table of contents
+- Prerequisite
+- Setup Angular project
+- Generate components using Angular CLI
+- Implementing Angular Material 8
+- Create Custom Angular Material Module
+- Initialize Routing
+- Create Angular Material Navbar
+- Create Registration UI with Material Design
+- Conclusion
+
+## Prerequisite
+Firstly, we’ll install and configure an Angular project from scratch. I assume you’ve already installed Node.js and Angular CLI in your system. If not follow this tutorial: Install Node JS on Mac OS
+
+I used below command to install Angular CLI:
+
+```console
+npm install @angular/cli -g
+```
+
+## Setup Angular Project
+Enter command in terminal and hit enter to create a fresh Angular project.
+
+```console
+ng new angular-material-login-template
+
+
+# ? Would you like to add Angular routing? = Yes
+# ? Which stylesheet format would you like to use? = CSS
+```
+Get into the project folder:
+
+```console
+cd angular-material-login-template
+````
+
+Generate Components Using Angular CLI
+Components are a reusable piece of code in an Angular application. You can create components quickly using a single command. Run the command to create login and registration components in an Angular project.
+
+```console
+ng g component components/log-in --module app
+ng g component components/register --module app
+```
+
+The --module app tag makes the app.module.ts is the main app module file.
+
+
+## Implementing Angular Material 8
+Run the following command to install Angular Material 8 UI library in Angular project:
+
+```console
+ng add @angular/material
+```
+
+Next, Angular CLI will ask you to select either of the material design pre-built theme:
+
+```console
+? Choose a prebuilt theme name, or "custom" for a custom theme: Indigo/Pink
+
+❯ Indigo/Pink        [ Preview: https://material.angular.io?theme=indigo-pink ] 
+  Deep Purple/Amber  [ Preview: https://material.angular.io?theme=deeppurple-amber ] 
+  Pink/Blue Grey     [ Preview: https://material.angular.io?theme=pink-bluegrey ] 
+  Purple/Green       [ Preview: https://material.angular.io?theme=purple-green ]
+```
+
+Select Y to add browser animations and hammer.js service:
+
+```console
+Set up HammerJS for gesture recognition? (Y/n) = Y
+? Set up browser animations for Angular Material? (Y/n) = Y
+```
+
+## Create Custom Angular Material Module
+It is always a best practice to create a separate module file to import Angular Material components. It makes your code to look more readable, Go to src > app folder and create angular-material.module.ts file and add the following code:
+
+You can add or remove material design component from the Angular Material module as per your design requirements.
+
+``` javascript
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
+import {
+   MatButtonModule,
+   MatToolbarModule,
+   MatIconModule,
+   MatBadgeModule,
+   MatSidenavModule,
+   MatListModule,
+   MatGridListModule,
+   MatFormFieldModule,
+   MatInputModule,
+   MatSelectModule,
+   MatRadioModule,
+   MatDatepickerModule,
+   MatNativeDateModule,
+   MatChipsModule,
+   MatTooltipModule,
+   MatTableModule,
+   MatPaginatorModule
+} from '@angular/material';
+
+@NgModule({
+   imports: [
+      CommonModule,
+      MatButtonModule,
+      MatToolbarModule,
+      MatIconModule,
+      MatSidenavModule,
+      MatBadgeModule,
+      MatListModule,
+      MatGridListModule,
+      MatFormFieldModule,
+      MatInputModule,
+      MatSelectModule,
+      MatRadioModule,
+      MatDatepickerModule,
+      MatNativeDateModule,
+      MatChipsModule,
+      MatTooltipModule,
+      MatTableModule,
+      MatPaginatorModule
+   ],
+   exports: [
+      MatButtonModule,
+      MatToolbarModule,
+      MatIconModule,
+      MatSidenavModule,
+      MatBadgeModule,
+      MatListModule,
+      MatGridListModule,
+      MatInputModule,
+      MatFormFieldModule,
+      MatSelectModule,
+      MatRadioModule,
+      MatDatepickerModule,
+      MatChipsModule,
+      MatTooltipModule,
+      MatTableModule,
+      MatPaginatorModule
+   ],
+   providers: [
+      MatDatepickerModule,
+   ]
+})
+
+export class AngularMaterialModule { }
+```
+
+Next, import it to app.module.ts:
+
+```console
+/* Angular material */
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AngularMaterialModule } from './angular-material.module';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+
+@NgModule({
+  declarations: [...],
+  imports: [
+    BrowserAnimationsModule,
+    AngularMaterialModule,
+  ],
+  providers: [...],
+  bootstrap: [...],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+})
+
+export class AppModule { }
+```
+
+
+## Initialize Routing
+In this step, we’ll initialize routing in our material design authentication UI template. Routing allows users to go from one component to another component. To activate routing in Angular app, we’ll define the routing configuration in app-routing.module.ts.
+
+```javascript
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+import { LogInComponent } from './components/log-in/log-in.component';
+import { RegisterComponent } from './components/register/register.component';
+
+const routes: Routes = [
+  { path: '', pathMatch: 'full', redirectTo: 'login' },
+  { path: 'login', component: LogInComponent },
+  { path: 'register', component: RegisterComponent }
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+
+export class AppRoutingModule { }
+```
+
+It already added to app module, in next step we’ll create Angular Material tool bar.
+
+## Create Angular Material Navbar
+Now, we are creating navbar using Angular Material UI library. First inject <router-outlet></router-outlet> directive in app.component.ts. It displays the routed component on the front-end:
+
+```javascript
+<!-- Toolbar -->
+<mat-toolbar color="primary" class="app-header">
+  <div><a href="https://www.positronx.io" target="_blank" class="positronx">PositronX.io</a></div>
+  <span class="nav-tool-items">
+    <a mat-button routerLink="login" routerLinkActive="active">Log in</a>
+    <a mat-button mat-raised-button routerLink="register" routerLinkActive="active">Register</a>
+  </span>
+</mat-toolbar>
+
+<router-outlet></router-outlet>
+```
+
+Create Login UI Template with Angular 8/9 Material Design
+To create beautiful Login and Registration UI templates, we’ll be taking benefit of Angular material UI components, Angular 8/9 flex layout CDK, Reactive Forms and FormsModule.
+
+Introduction Angular Flex Layout
+Angular Flex Layout provides a sophisticated layout API using Flexbox CSS + mediaQuery. This module provides Angular developers with component layout features using a custom Layout API, mediaQuery observables, and injected DOM flexbox-2016 CSS stylings.
+
+Reference: Angular Flex Layout:
+https://github.com/angular/flex-layout
+
+
+Run command to install Angular 8/9 Flex Layout:
+
+```console
+npm i -s @angular/flex-layout @angular/cdk
+```
+
+Then, import the flex layout module in app module.
+
+```javascript
+import { FlexLayoutModule } from '@angular/flex-layout';
+...
+
+@NgModule({
+    ...
+    imports: [ FlexLayoutModule ],
+    ...
+});
+```
 

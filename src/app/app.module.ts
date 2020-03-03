@@ -1,11 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SigninComponent } from './components/signin/signin.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
+
+
 
 /** Setting up HttpClient
 To handle REST APIs via HTTP requests in our Angular user authentication app.
@@ -20,12 +22,19 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
  * then within the req.clone method set the Authorization header and call teh next.handle() method. */
 import { AuthInterceptor } from './shared/authconfig.interceptor';
 
-// Import ReactiveFormsModule and FormsModule in app.module.ts file and also declare in imports: […] array. 
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+
 import { AppheaderComponent } from './appheader/appheader.component';
 import { HomeComponent } from './home/home.component';
 import { ChiSonoComponent } from './chi-sono/chi-sono.component';
+
+
+/* Angular material */
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AngularMaterialModule } from './angular-material.module';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { FlexLayoutModule } from '@angular/flex-layout';
+// Import ReactiveFormsModule and FormsModule in app.module.ts file and also declare in imports: […] array. 
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 // ANGULAR MATERIAL
 import {
@@ -52,10 +61,15 @@ import { ProvaComponent } from './prova/prova.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
+    AngularMaterialModule,
+    FlexLayoutModule,
     ReactiveFormsModule,
     FormsModule,
+
+
+    AppRoutingModule,
+    HttpClientModule,
+
     BrowserAnimationsModule,
     MatToolbarModule,
     MatIconModule,
@@ -72,6 +86,7 @@ import { ProvaComponent } from './prova/prova.component';
       multi: true
     }
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }

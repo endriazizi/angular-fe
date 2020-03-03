@@ -1,10 +1,23 @@
-<mat-toolbar color="primary">
+<!-- <mat-toolbar color="primary">
     <h1>
         ngStore
     </h1>
     <button mat-button routerLink="/">Home</button>
     <button mat-button routerLink="/about">About</button>
 
+</mat-toolbar> -->
+
+<!-- Toolbar -->
+<mat-toolbar color="primary" class="app-header">
+    <div><a href="https://www.positronx.io" target="_blank" class="positronx">PositronX.io</a></div>
+    <span class="nav-tool-items">
+        <a mat-button routerLink="login" routerLinkActive="active">Log in</a>
+        <a mat-button mat-raised-button routerLink="register" routerLinkActive="active">Register</a>
+    </span>
+
+    <button mat-button routerLink="/">Home</button>
+    <button mat-button routerLink="/about">About</button>
 </mat-toolbar>
+
 
 <router-outlet></router-outlet>

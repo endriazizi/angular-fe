@@ -1,4 +1,4 @@
-<p>signin works!</p>
+<!-- <p>signin works!</p>
 
 <form class="form-signin" [formGroup]="signinForm" (ngSubmit)="loginUser()">
     <h3 class="h3 mb-3 font-weight-normal text-center">Please sign in</h3>
@@ -31,4 +31,28 @@
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
         <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
     </form>
+</div> -->
+
+
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+
+    <mat-card class="box">
+        <mat-card-header>
+            <mat-card-title>Log in</mat-card-title>
+        </mat-card-header>
+
+        <form class="example-form">
+            <mat-card-content>
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Username">
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Password">
+                </mat-form-field>
+            </mat-card-content>
+            <button mat-stroked-button color="accent" class="btn-block">Log in</button>
+        </form>
+    </mat-card>
+
 </div>
