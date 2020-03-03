@@ -1,0 +1,45 @@
+{
+  "prodotti": [{
+    "id": 1,
+    "nome": "Refined Fresh Gloves",
+    "descrizione": "Est distinctio accusantium consectetur laborum ut modi quia. Autem porro minus iusto id molestiae nisi ut quis nesciunt. Deleniti et eligendi consequatur quaerat perspiciatis dolor omnis et fugit.",
+    "prezzo": 20,
+    "imageUrl": "https://source.unsplash.com/1600x900/?product",
+    "quantita": 20
+  }, {
+    "id": 2,
+    "nome": "Incredible Granite Bike",
+    "descrizione": "Ullam consequatur hic voluptate. Nihil modi voluptatem.",
+    "prezzo": 20,
+    "imageUrl": "https://source.unsplash.com/1600x900/?product",
+    "quantita": 20
+  }, {
+    "id": 3,
+    "nome": "Rustic Rubber Hat",
+    "descrizione": "Vero delectus quia odio ut. Molestias eum consequatur. Quis id possimus sapiente.",
+    "prezzo": 20,
+    "imageUrl": "https://source.unsplash.com/1600x900/?product",
+    "quantita": 20
+  }, {
+    "id": 4,
+    "nome": "Fantastic Granite Computer",
+    "descrizione": "Voluptatum facere voluptatibus rerum sint enim consectetur totam. Ad qui molestiae et sed minima nam veniam. Facilis fugit quibusdam fugit fugit quia sint. Quidem consequatur consequatur quia quia adipisci architecto est doloremque et. Molestiae impedit id adipisci unde aut ipsam. Sit quia iste ab velit soluta laborum dolores dicta pariatur.",
+    "prezzo": 20,
+    "imageUrl": "https://source.unsplash.com/1600x900/?product",
+    "quantita": 20
+  }, {
+    "id": 5,
+    "nome": "Small Soft Table",
+    "descrizione": "Odit sint eos. Ipsum dolorum eos et veritatis. Omnis nobis eius. Sed accusamus quasi voluptas. Occaecati cupiditate ea excepturi voluptas.",
+    "prezzo": 20,
+    "imageUrl": "https://source.unsplash.com/1600x900/?product",
+    "quantita": 20
+  }, {
+    "id": 6,
+    "nome": "Incredible Granite Soap",
+    "descrizione": "Cumque laudantium quos iste porro sit doloribus. Veritatis excepturi rerum est in voluptatibus cupiditate repellat sit dolorum. Nulla aperiam veritatis quos maiores fugit. Quo quos omnis provident.",
+    "prezzo": 20,
+    "imageUrl": "https://source.unsplash.com/1600x900/?product",
+    "quantita": 20
+  }]
+}
